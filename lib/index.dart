@@ -1,4 +1,5 @@
 import 'package:IoTSensors/gps/gpspage.dart';
+import 'package:IoTSensors/pedometer/pedometer.dart';
 import 'package:IoTSensors/snake/snakepage.dart';
 import 'package:flutter/material.dart';
 import 'navigation.dart';
@@ -38,6 +39,11 @@ class _IndexState extends State<Index> with TickerProviderStateMixin {
         icon: new Icon(Icons.location_city),
         title: new Text("GPS"),
         vsync: this,
+      ),
+      new NavigationIconView(
+        icon: new Icon(Icons.directions_walk),
+        title: new Text("Pedometer"),
+        vsync: this,
       )
     ];
 
@@ -47,10 +53,7 @@ class _IndexState extends State<Index> with TickerProviderStateMixin {
     }
 
     // 将我们 bottomBar 上面的按钮图标对应的页面存放起来，方便我们在点击的时候
-    _pageList = <StatefulWidget>[
-      new SnakePage(),
-      new GpsPage()
-    ];
+    _pageList = <StatefulWidget>[new SnakePage(), new GpsPage(), new PedometerPage()];
     _currentPage = _pageList[_currentIndex];
   }
 

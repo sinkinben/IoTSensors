@@ -14,6 +14,7 @@ class _GpsPageState extends State<GpsPage> {
   String _message = '已开启';
   bool gpsopen = true;
   String location = '';
+  String locationField = '';
 
   ///////////Flutter 调用原生 Start//////////////
   static const MethodChannel methodChannel =
@@ -36,6 +37,7 @@ class _GpsPageState extends State<GpsPage> {
     // await methodChannel.invokeMethod('getDate');
     setState(() {
       location = '经度：121.443287, 纬度：31.03201';
+      locationField = '中国，上海';
     });
   }
 
@@ -101,10 +103,11 @@ class _GpsPageState extends State<GpsPage> {
                       RaisedButton(
                         color: Colors.blue,
                         textColor: Colors.white,
-                        child: Text('获取经纬度'),
+                        child: Text('获取当前位置'),
                         onPressed: _getDate,
                       ),
-                      Text('当前位置: ' + location),
+                      Text('经纬度：' + location),
+                      Text('位置：' + locationField)
                     ],
                   ))
             ],

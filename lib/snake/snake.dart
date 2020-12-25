@@ -33,7 +33,7 @@ class SnakeBoardPainter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    final Paint blackLine = Paint()..color = Colors.black;
+    final Paint blackLine = Paint()..color = Colors.lightBlue;
     final Paint blackFilled = Paint()
       ..color = Colors.black
       ..style = PaintingStyle.fill;
